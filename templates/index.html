@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASL Gesture Recognition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ASL Gesture Recognition</h1>
+        </header>
+
+        <!-- Video Stream Section -->
+        <section class="video-section">
+            <div class="video-container">
+                <img src="{{ url_for('video_feed') }}" id="video-stream" alt="Video Stream">
+            </div>
+        </section>
+
+        <!-- Prediction Display Section -->
+        <section class="prediction-section">
+            <h2>Prediction:</h2>
+            <div id="gesture" class="prediction-display">_</div>
+            <div class="word-display">
+                <h3>Detected Word:</h3>
+                <p id="detected-word">_</p>
+            </div>
+        </section>
+
+        <!-- Control Buttons Section -->
+        <section class="controls">
+    <button onclick="addSpace()" class="button">
+        <img src="/static/images/space.png" alt="Space Icon" class="icon">
+        Space
+    </button>
+    <button onclick="deleteLast()" class="button">
+        <img src="/static/images/delete.png" alt="Delete Icon" class="icon">
+        Delete
+    </button>
+</section>
+
+        
+        
+        
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

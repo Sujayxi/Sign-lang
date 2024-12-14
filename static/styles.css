@@ -1,0 +1,242 @@
+/* Reset and Basic Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Modern font */
+}
+
+body {
+    background-color: #10002B; /* Dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    text-align: center;
+    width: 95%; /* Full-screen width */
+    max-width: 1500px; /* Increased max-width for larger display */
+    padding: 30px;
+    background: #240046; /* Darker container background */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Styling */
+header h1 {
+    font-size: 2.5rem;
+    color: #E0AAFF; /* Light text color */
+    margin-bottom: 20px;
+}
+
+/* Video Section Styling */
+.video-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding: 0 ; /* 10% padding on left and right */
+}
+
+.video-container {
+    width: 100%; /* Full width within the section */
+    height: 70vh; /* Maintain height */
+    background: #3C096C; /* Slightly lighter box for video */
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #ffffff; /* White background for better contrast */
+}
+
+#video-stream {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Prediction Display */
+.prediction-section {
+    margin-top: 20px;
+    padding: 15px;
+    border-top: 2px solid #7B2CBF; /* Accent color */
+}
+
+.prediction-section h2 {
+    font-size: 1.8rem;
+    color: #C77DFF; /* Accent color */
+}
+
+.prediction-display {
+    font-size: 3.5rem;
+    color: #E0AAFF; /* Light text */
+    margin: 15px 0;
+    background: #3C096C; /* Background for contrast */
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.word-display h3 {
+    font-size: 1.4rem;
+    color: #C77DFF;
+}
+
+#detected-word {
+    font-size: 2rem;
+    color: #10002B; /* Dark text */
+    background: #9D4EDD; /* Accent background */
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+/* Control Buttons */
+.controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.control-btn {
+    font-size: 1.2rem;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: #ffffff; /* White text */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.space-btn {
+    background-color: #7B2CBF;
+}
+
+.delete-btn {
+    background-color: #E0AAFF;
+    color: #240046; /* Darker text */
+}
+
+.control-btn:hover {
+    opacity: 0.9;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    background-color: #000;
+    color: #fff;
+    font-size: 18px; /* Increased font size */
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 12px; /* Increased padding */
+    padding: 20px; /* Increased padding */
+    height: 100px; /* Increased button height */
+    width: 150px; /* Increased button width */
+    border-radius: 15px 15px 12px 12px;
+    cursor: pointer;
+    position: relative;
+    will-change: transform;
+    transition: all .1s ease-in-out 0s;
+    user-select: none;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    background-position: bottom right, bottom right;
+    background-size: 100% 100%, 100% 100%;
+    background-repeat: no-repeat;
+    box-shadow: inset -4px -10px 0px rgba(255, 255, 255, 0.4),
+      inset -4px -8px 0px rgba(0, 0, 0, 0.3),
+      0px 2px 1px rgba(0, 0, 0, 0.3),
+      0px 2px 1px rgba(255, 255, 255, 0.1);
+    transform: perspective(70px) rotateX(5deg) rotateY(0deg);
+  }
+  
+  .button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.5));
+    z-index: -1;
+    border-radius: 15px;
+    box-shadow: inset 4px 0px 0px rgba(255, 255, 255, 0.1),
+      inset 4px -8px 0px rgba(0, 0, 0, 0.3);
+    transition: all .1s ease-in-out 0s;
+  }
+  
+  .button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    background-position: bottom right, bottom right;
+    background-size: 100% 100%, 100% 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
+    border-radius: 15px;
+    transition: all .1s ease-in-out 0s;
+  }
+  
+  .button:active {
+    will-change: transform;
+    transform: perspective(80px) rotateX(5deg) rotateY(1deg) translateY(3px) scale(0.96);
+    height: 98px; /* Adjusted to match active state */
+    border: 0.25px solid rgba(0, 0, 0, 0.2);
+    box-shadow: inset -4px -8px 0px rgba(255, 255, 255, 0.2),
+      inset -4px -6px 0px rgba(0, 0, 0, 0.8),
+      0px 1px 0px rgba(0, 0, 0, 0.9),
+      0px 1px 0px rgba(255, 255, 255, 0.2);
+    transition: all .1s ease-in-out 0s;
+  }
+  
+  .button::after:active {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.2));
+  }
+  
+  .button:active::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 5%;
+    left: 20%;
+    width: 60%; /* Adjusted to match the size increase */
+    height: 90%; /* Adjusted to match the size increase */
+    background-color: rgba(255, 255, 255, 0.1);
+    animation: overlay 0.1s ease-in-out 0s;
+    pointer-events: none;
+  }
+  
+  .button svg {
+    width: 24px; /* Increased icon size */
+    height: 24px; /* Increased icon size */
+  } 
+
+  .button .icon {
+    width: 24px; /* Shrink the icon size */
+    height: 24px; /* Shrink the icon size */
+    margin-right: 10px; /* Space between the icon and the text */
+    object-fit: contain; /* Ensure the image scales without distortion */
+  } 
+  
+  @keyframes overlay {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .button:focus {
+    outline: none;
+  }
+  
